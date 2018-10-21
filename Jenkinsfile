@@ -10,6 +10,7 @@ pipeline {
             docker.image('maven:3.5.4-jdk-8-alpine').inside("-v $HOME/.m2:/var/maven/.m2 --link ${c.id}:db") {
                 sh 'mvn -Dmaven.repo.local=/var/maven/.m2 -DDB_ADDR=db clean install jib:build'
             }
+        }
       }
     }
   }
