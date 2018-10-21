@@ -2,7 +2,9 @@ pipeline {
   agent any
   stages {
     stage('init') {
+      steps {
         sh 'cp -R /var/postgres_data ./postgres_data'
+      }
     }
     stage('mvn build') {
       steps {
