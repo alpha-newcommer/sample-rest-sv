@@ -60,7 +60,7 @@ public class SampleRestSvApplicationTests {
 
 		SampleResource sr = restOperations.getForObject(url, SampleResource.class);
 
-		assertThat(sr.getMessage(), is("Taro is 21 years old."));
+		assertThat(sr.getMessage(), is("kojiro is 20 years old."));
 	}
 
 }
