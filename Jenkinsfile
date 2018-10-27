@@ -18,8 +18,10 @@ pipeline {
       }
     }
     stage('register image') {
+      steps {
         sh 'docker load --input target/jib-image.tar'
         sh 'docker push registry:5000/sample-rest-sv'
+      }
     }
   }
 }
