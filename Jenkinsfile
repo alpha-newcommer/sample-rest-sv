@@ -20,7 +20,12 @@ pipeline {
     stage('register image') {
       steps {
         sh 'docker load --input target/jib-image.tar'
-        sh 'docker push registry:5000/sample-rest-sv'
+        sh 'docker image tag sample-rest-sv  localhost:5000/sample-rest-sv'
+        script {
+          docker.image('registry:2.6').withRun("-v /var/registry-data:/var/lib/registry") { c ->
+            sh 'docker push localhost:5000/sample-rest-sv'
+          }
+        }
       }
     }
   }
