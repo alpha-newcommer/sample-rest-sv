@@ -64,6 +64,7 @@
 					<to>
 						<image>registry:5000/sample-rest-sv</image>
 					</to>
+					<allowInsecureRegistries>true</allowInsecureRegistries>
 				</configuration>
 			</plugin>
 		</plugins>
