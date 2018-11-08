@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('init') {
       steps {
+        sh 'rm -rf /var/postgres_data/data'
         sh 'cp -R /var/postgres_data/org_data /var/postgres_data/data'
       }
     }
